@@ -42,7 +42,7 @@ public class Menu {
             case "3" -> {
                 System.out.println("");
                 System.out.println("");
-                System.out.println("Introduzca un cargo para actualizar su entrada en la basede datos EMPLEADOS.");
+                System.out.println("Introduzca un Id de empleado para actualizar su entrada en la basede datos EMPLEADOS.");
                 Empleado empEdit = Leer.buscarEmpleado(control, sc);
                 System.out.println("El empleado a editar es: ");
                 System.out.println(empEdit);
@@ -57,10 +57,15 @@ public class Menu {
                 Empleado empDel = Leer.buscarEmpleado(control, sc);
                 System.out.println("El empleado a borrar es: ");
                 System.out.println(empDel);
-                Leer.borrarEmpleado(control, empDel.getId(), sc);
-                System.out.println("El empleado ha sido borrado.");
-                System.out.println("");
-                break;
+                if (empDel == null) {
+                    System.out.println("El Id intruducido no existe en la base de datos");
+                    break;
+                } else {
+                    Leer.borrarEmpleado(control, empDel.getId(), sc);
+                    System.out.println("El empleado ha sido borrado.");
+                    System.out.println("");
+                    break;
+                }
             }
             case "5" -> {
                 System.out.println("");

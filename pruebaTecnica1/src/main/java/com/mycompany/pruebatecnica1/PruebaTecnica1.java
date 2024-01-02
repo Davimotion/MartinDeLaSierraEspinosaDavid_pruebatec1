@@ -5,8 +5,7 @@ import java.util.Scanner;
 
 public class PruebaTecnica1 {
 
-    public static void main(String[] args) {
-        System.out.println("hello world");
+    public static void main(String[] args) {        
         Scanner sc = new Scanner(System.in);
         boolean trigger = false;
         while (trigger == false) {
